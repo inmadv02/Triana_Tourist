@@ -8,5 +8,7 @@ import java.util.List;
 public interface POIRepository extends JpaRepository<POI, Long> {
 
 
-    List<POI> findPOIByCategoria(String categoria);
+    List<POI> findPOIByCategory(String categoria);
+
+    boolean existsByName(String name);
 }

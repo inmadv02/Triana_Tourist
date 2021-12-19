@@ -1,5 +1,6 @@
 package com.salesianostriana.com.Triana_Tourist.error.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +10,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ApiValidationSubError extends ApiError {
+public class ApiValidationSubError extends ApiSubError {
 
-    private String objeto, campo, mensaje;
+    private String objeto, mensaje;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String campo;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Object valorRechazado;
 }
