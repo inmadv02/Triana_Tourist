@@ -4,16 +4,17 @@ import com.salesianostriana.com.Triana_Tourist.validation.multiple.annotations.N
 import com.salesianostriana.com.Triana_Tourist.validation.simple.annotations.LocationFormatMatch;
 import com.salesianostriana.com.Triana_Tourist.validation.simple.annotations.PhotoUrlFormat;
 import com.salesianostriana.com.Triana_Tourist.validation.simple.annotations.UniquePOI;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor @NoArgsConstructor
 @NotRepeatedPhotos(fields = {"coverPhoto", "photo2", "photo3"})
 public class CreatePOIDTO {
@@ -28,7 +29,7 @@ public class CreatePOIDTO {
     private String description;
     private LocalDate date;
 
-    @PhotoUrlFormat
+    @URL(message = "{poi.foto.URL}")
     @NotBlank(message = "{poi.foto.blank}")
     private String coverPhoto;
 

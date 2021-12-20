@@ -6,6 +6,7 @@ import com.salesianostriana.com.Triana_Tourist.validation.simple.annotations.Loc
 import com.salesianostriana.com.Triana_Tourist.validation.simple.annotations.PhotoUrlFormat;
 import com.salesianostriana.com.Triana_Tourist.validation.simple.annotations.UniquePOI;
 import lombok.*;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.NotBlank;
@@ -31,7 +32,7 @@ public class GetPOIDTO {
     private String description;
     private LocalDate date;
 
-    @PhotoUrlFormat
+    @URL(message = "{poi.foto.URL}")
     @NotBlank(message = "{poi.foto.blank}")
     private String coverPhoto;
 

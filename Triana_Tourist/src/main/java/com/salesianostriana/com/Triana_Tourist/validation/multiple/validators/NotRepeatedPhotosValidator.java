@@ -2,6 +2,7 @@ package com.salesianostriana.com.Triana_Tourist.validation.multiple.validators;
 
 import com.salesianostriana.com.Triana_Tourist.validation.multiple.annotations.NotRepeatedPhotos;
 import org.springframework.beans.PropertyAccessorFactory;
+import org.springframework.validation.ObjectError;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -19,17 +20,15 @@ public class NotRepeatedPhotosValidator implements ConstraintValidator<NotRepeat
     @Override
     public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
 
-
-       for(int i = 0; i< fotos.length; i++)
-           for(int j = 0; j< fotos.length; j++) {
-               if (fotos[i] != null && fotos[j] != null) {
-                   if (fotos[i].equals(fotos[j])) {
-                       return false;
-                   }
-               }
-               return true;
-           }
-           return true;
-
+          for(int i = 0; i< fotos.length; i++) {
+              Object field = PropertyAccessorFactory.forBeanPropertyAccess(o).getPropertyValue(fotos[i]);
+              for (int j = i + 1; j < fotos.length; j++) {
+                  Object field2 = PropertyAccessorFactory.forBeanPropertyAccess(o).getPropertyValue(fotos[j]);
+                  if (field == field2) {
+                      return true;
+                  }
+              }
+          }
+          return false;
     }
 }
