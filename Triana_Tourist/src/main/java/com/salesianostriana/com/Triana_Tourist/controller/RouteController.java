@@ -45,7 +45,7 @@ public class RouteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<GetRouteDTO> editarRoute(@Valid @RequestBody GetRouteDTO dto, @PathVariable Long id){
+    public ResponseEntity<CreateRouteDTO> editarRoute(@Valid @RequestBody CreateRouteDTO dto, @PathVariable Long id){
 
         routeService.editRoute(dto, id);
         return ResponseEntity.ok().body(dto);

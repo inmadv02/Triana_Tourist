@@ -8,6 +8,7 @@ import com.salesianostriana.com.Triana_Tourist.dto.Route.GetRouteDTO;
 import com.salesianostriana.com.Triana_Tourist.dto.Route.RouteDTOConverter;
 import com.salesianostriana.com.Triana_Tourist.error.tiposErrores.EntityNotFoundException;
 import com.salesianostriana.com.Triana_Tourist.error.tiposErrores.ListEntityNotFoundException;
+import com.salesianostriana.com.Triana_Tourist.error.tiposErrores.RepeatedElementException;
 import com.salesianostriana.com.Triana_Tourist.model.POI;
 import com.salesianostriana.com.Triana_Tourist.model.Route;
 import com.salesianostriana.com.Triana_Tourist.repositories.RouteRepository;
@@ -63,7 +64,7 @@ public class RouteService extends BaseService<Route, Long, RouteRepository> {
         return route;
     }
 
-    public Route editRoute(GetRouteDTO dto, Long id) {
+    public Route editRoute(CreateRouteDTO dto, Long id) {
 
         Optional<Route> route = repository.findById(id);
 
@@ -73,7 +74,6 @@ public class RouteService extends BaseService<Route, Long, RouteRepository> {
 
         return route.map(r -> {
             r.setName(dto.getName());
-            r.setPuntosInteres(new ArrayList<>());
             repository.save(r);
             return r;
         }).get();
@@ -102,6 +102,13 @@ public class RouteService extends BaseService<Route, Long, RouteRepository> {
             throw new EntityNotFoundException(id, Route.class);
         }
 
+        if(!route.getPuntosInteres()
+                .stream()
+                .filter(p -> p.getName().equals(poi.getName()))
+                .findFirst().isEmpty()){
+            throw new RepeatedElementException(POI.class);
+        }
+
         if(id2==null){
             throw new EntityNotFoundException(id, POI.class);
         }
@@ -121,13 +128,17 @@ public class RouteService extends BaseService<Route, Long, RouteRepository> {
 
         Optional<Route> route = repository.findById(id);
         GetPOIDTO poi = poiService.findOne(id2);
+        POI poi2 = poidtoConverter.dtoToPOI(poi);
 
         if(route.isEmpty()){
             throw new EntityNotFoundException(id, Route.class);
         }
 
-        POI poi2 = poidtoConverter.dtoToPOI(poi);
+        if(poi == null){
+            throw new EntityNotFoundException(id, POI.class);
+        }
         route.get().removePOI(poi2);
+        repository.save(route.get());
 
     }
 

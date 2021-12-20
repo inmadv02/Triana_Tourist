@@ -15,14 +15,7 @@ import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor @NoArgsConstructor
-@NotRepeatedPhotos.List({
-        @NotRepeatedPhotos(
-                photoUrl1 = "coverPhoto",
-                photoUrl2 = "photo2",
-                photoUrl3 = "photo3",
-                message = "{poi.foto.repeat}"
-        )
-})
+@NotRepeatedPhotos(fields = {"coverPhoto", "photo2", "photo3"})
 public class CreatePOIDTO {
 
     @NotBlank(message = "{category.name.empty}")

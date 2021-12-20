@@ -3,7 +3,6 @@ com\salesianostriana\com\Triana_Tourist\validation\multiple\validators\NotRepeat
 com\salesianostriana\com\Triana_Tourist\dto\POI\POIDTOConverter.class
 com\salesianostriana\com\Triana_Tourist\validation\simple\annotations\UniquePOI.class
 com\salesianostriana\com\Triana_Tourist\error\model\ApiSubError.class
-com\salesianostriana\com\Triana_Tourist\validation\multiple\annotations\NotRepeatedPhotos$List.class
 com\salesianostriana\com\Triana_Tourist\validation\simple\validators\PhotoFormatValidator.class
 com\salesianostriana\com\Triana_Tourist\dto\Route\GetRouteDTO$GetRouteDTOBuilder.class
 com\salesianostriana\com\Triana_Tourist\error\model\ApiError.class
@@ -19,6 +18,7 @@ com\salesianostriana\com\Triana_Tourist\model\Category$CategoryBuilder.class
 com\salesianostriana\com\Triana_Tourist\services\RouteService.class
 com\salesianostriana\com\Triana_Tourist\error\GlobalRestControllerAdvice.class
 com\salesianostriana\com\Triana_Tourist\model\Route$RouteBuilder.class
+com\salesianostriana\com\Triana_Tourist\error\tiposErrores\RepeatedElementException.class
 com\salesianostriana\com\Triana_Tourist\dto\Category\CreateCategoryDTO.class
 com\salesianostriana\com\Triana_Tourist\validation\simple\validators\LocationFormatMatchValidator.class
 com\salesianostriana\com\Triana_Tourist\services\CategoryService.class

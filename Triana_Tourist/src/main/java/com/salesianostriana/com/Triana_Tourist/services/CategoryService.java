@@ -64,6 +64,7 @@ public class CategoryService extends BaseService<Category, Long, CategoryReposit
         }
 
         return category.map(ct -> {
+                    ct.setId(c.getId());
                     ct.setName(c.getName());
                     repository.save(ct);
                     return ct;

@@ -14,6 +14,8 @@ import javax.validation.constraints.NotNull;
 @Builder
 public class GetCategoryDTO {
 
+    private Long id;
+
     @NotNull(message = "{category.name.null}")
     @NotBlank(message = "{category.name.empty}")
     @UniqueCategory

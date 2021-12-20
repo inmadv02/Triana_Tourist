@@ -13,6 +13,7 @@ public class CategoryDTOConverter {
     public GetCategoryDTO categoryTOCategoryDTO(Category c){
         return GetCategoryDTO
                 .builder()
+                .id(c.getId())
                 .name(c.getName())
                 .build();
     }

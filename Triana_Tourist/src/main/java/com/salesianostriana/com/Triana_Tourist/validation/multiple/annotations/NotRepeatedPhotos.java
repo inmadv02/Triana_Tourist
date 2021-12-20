@@ -21,16 +21,7 @@ public @interface NotRepeatedPhotos {
 
     Class<? extends Payload>[] payload() default {};
 
-    String photoUrl1();
+    String[] fields();
 
-    String photoUrl2();
 
-    String photoUrl3();
-
-    @Target({ElementType.TYPE})
-    @Retention(RetentionPolicy.RUNTIME)
-    @interface List {
-        NotRepeatedPhotos[] value();
-
-    }
 }

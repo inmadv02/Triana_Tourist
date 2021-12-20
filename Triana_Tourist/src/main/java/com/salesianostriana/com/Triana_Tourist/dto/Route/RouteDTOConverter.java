@@ -23,6 +23,7 @@ public class RouteDTOConverter {
 
         return GetRouteDTO
                 .builder()
+                .id(r.getId())
                 .name(r.getName())
                 .poi(poisList)
                 .build();

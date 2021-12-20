@@ -5,6 +5,7 @@ import com.salesianostriana.com.Triana_Tourist.error.model.ApiSubError;
 import com.salesianostriana.com.Triana_Tourist.error.model.ApiValidationSubError;
 import com.salesianostriana.com.Triana_Tourist.error.tiposErrores.EntityNotFoundException;
 import com.salesianostriana.com.Triana_Tourist.error.tiposErrores.ListEntityNotFoundException;
+import com.salesianostriana.com.Triana_Tourist.error.tiposErrores.RepeatedElementException;
 import org.apache.tomcat.jni.Local;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.http.HttpHeaders;
@@ -63,6 +64,11 @@ public class GlobalRestControllerAdvice extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ListEntityNotFoundException.class)
     public ResponseEntity<?> handleListEntityNotFoundException(ListEntityNotFoundException exception, WebRequest webRequest) {
        return buildApiError(HttpStatus.NOT_FOUND, exception, webRequest);
+    }
+
+    @ExceptionHandler(RepeatedElementException.class)
+    public ResponseEntity<?> handleRepeatedElementException(RepeatedElementException exception, WebRequest webRequest) {
+        return buildApiError400(exception, webRequest);
     }
 
     @ExceptionHandler({ConstraintViolationException.class})

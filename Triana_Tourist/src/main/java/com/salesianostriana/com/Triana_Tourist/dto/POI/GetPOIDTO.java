@@ -16,15 +16,10 @@ import java.util.List;
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Builder
-@NotRepeatedPhotos.List({
-        @NotRepeatedPhotos(
-                photoUrl1 = "coverPhoto",
-                photoUrl2 = "photo2",
-                photoUrl3 = "photo3",
-                message = "{poi.foto.repeat}"
-        )
-})
+@NotRepeatedPhotos(fields = {"coverPhoto", "photo2", "photo3"})
 public class GetPOIDTO {
+
+    private Long id;
 
     @NotBlank(message = "{category.name.empty}")
     @UniquePOI

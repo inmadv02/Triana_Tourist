@@ -30,9 +30,7 @@ public class Route implements Serializable {
     @JoinTable(joinColumns = @JoinColumn(name = "poi_id",
             foreignKey = @ForeignKey(name = "FK_ROUTE_POI")),
             inverseJoinColumns = @JoinColumn(name = "route_id",
-                    foreignKey = @ForeignKey(name = "FK_POI_ROUTE")),
-            name = "ruta")
-    @UniqueElements
+                    foreignKey = @ForeignKey(name = "FK_POI_ROUTE")))
     private List<POI> puntosInteres = new ArrayList<>();
 
     public Route(String name) {
@@ -46,7 +44,10 @@ public class Route implements Serializable {
     }
 
     public void removePOI (POI poi){
-        this.puntosInteres.remove(poi);
+        //this.puntosInteres.remove(poi);
+
+        this.puntosInteres.removeIf(p -> p.getId() == poi.getId());
+
     }
 
 }

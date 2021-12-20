@@ -70,12 +70,14 @@ public class POIService extends BaseService<POI, Long, POIRepository> {
         }
 
         return poi.map(p -> {
+            p.setId(poidto.getId());
             p.setLocation(poidto.getLocation());
             p.setDescription(poidto.getDescription());
             p.setDate(poidto.getDate());
             p.setCoverPhoto(poidto.getCoverPhoto());
             p.setPhoto2(poidto.getPhoto2());
             p.setPhoto3(poidto.getPhoto3());
+            p.setCategory(poidto.getCategory());
             repository.save(p);
             return p;
         }).get();

@@ -22,6 +22,7 @@ public class POIDTOConverter {
 
         return GetPOIDTO
                 .builder()
+                .id(poi.getId())
                 .name(poi.getName())
                 .location(poi.getLocation())
                 .date(poi.getDate())
@@ -49,6 +50,7 @@ public class POIDTOConverter {
     public POI dtoToPOI (GetPOIDTO poi){
 
         return POI.builder()
+                .id(poi.getId())
                 .name(poi.getName())
                 .location(poi.getLocation())
                 .date(poi.getDate())

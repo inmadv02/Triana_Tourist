@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a75675db-620c-4001-9d09-f3f964578e8b",
+		"_postman_id": "69de951a-0fa4-4330-bef8-6fb37e4d9046",
 		"name": "Triana_Tourist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -33,14 +33,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/category/8",
+							"raw": "localhost:8080/category/5",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"category",
-								"8"
+								"5"
 							]
 						}
 					},
@@ -165,7 +165,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"Templos religiosos\"\r\n}",
+							"raw": "{\r\n    \"id\" : 8,\r\n    \"name\" : \"Templos religiosos\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -254,14 +254,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/poi/5",
+							"raw": "localhost:8080/poi/9",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"poi",
-								"5"
+								"9"
 							]
 						}
 					},
@@ -274,7 +274,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"Puente de Triana\",\r\n    \"location\": \"37.386244, -6.002397\",\r\n    \"description\": \"Une el centro de la ciudad con el barrio de Triana, cruzando el río Guadalquivir. Sustituyó en el siglo XIX a un viejo puente de barcas que existía en su lugar, constituyendo el puente de hierro más antiguo conservado en España.\",\r\n    \"date\" : \"1852-01-29\",\r\n    \"coverPhoto\" : \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Puente_de_triana_2013An010.jpg/413px-Puente_de_triana_2013An010.jpg\",\r\n    \"photo2\" : \" \",\r\n    \"photo3\" : \"hre\",\r\n    \"category\" : 1\r\n\r\n}",
+							"raw": "{\r\n    \"name\" : \"Puente de Triana\",\r\n    \"location\": \"37.386244, -6.002397\",\r\n    \"description\": \"Une el centro de la ciudad con el barrio de Triana, cruzando el río Guadalquivir. Sustituyó en el siglo XIX a un viejo puente de barcas que existía en su lugar, constituyendo el puente de hierro más antiguo conservado en España.\",\r\n    \"date\" : \"1852-01-29\",\r\n    \"coverPhoto\" : \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Puente_de_triana_2013An010.jpg/413px-Puente_de_triana_2013An010.jpg\",\r\n    \"photo2\" : null,\r\n    \"photo3\" : null,\r\n    \"category\" : 8\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -442,7 +442,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"Puente de Triana\",\r\n    \"location\": \"37.386244, -6.002397\",\r\n    \"description\": \"Une el centro de la ciudad con el barrio de Triana, cruzando el río Guadalquivir. Sustituyó en el siglo XIX a un viejo puente de barcas que existía en su lugar, constituyendo el puente de hierro más antiguo conservado en España.\",\r\n    \"date\" : \"1852-01-29\",\r\n    \"coverPhoto\" : \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Puente_de_triana_2013An010.jpg/413px-Puente_de_triana_2013An010.jpg\",\r\n    \"photo2\" : \"https://offloadmedia.feverup.com/sevillasecreta.co/wp-content/uploads/2017/05/02050355/shutterstock_1225992802-1-1024x597.jpg\",\r\n    \"photo3\" : null\r\n\r\n}",
+							"raw": "{\r\n    \"id\" : 9,\r\n    \"name\" : \"Puente de Triana (Puente de Isabel II)\",\r\n    \"location\": \"37.386244, -6.002397\",\r\n    \"description\": \"Une el centro de la ciudad con el barrio de Triana, cruzando el río Guadalquivir. Sustituyó en el siglo XIX a un viejo puente de barcas que existía en su lugar, constituyendo el puente de hierro más antiguo conservado en España.\",\r\n    \"date\" : \"1852-01-29\",\r\n    \"coverPhoto\" : \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Puente_de_triana_2013An010.jpg/413px-Puente_de_triana_2013An010.jpg\",\r\n    \"photo2\" : \"https://offloadmedia.feverup.com/sevillasecreta.co/wp-content/uploads/2017/05/02050355/shutterstock_1225992802-1-1024x597.jpg\",\r\n    \"photo3\" : null,\r\n    \"category\" : {\r\n        \"id\": 8,\r\n        \"name\": \"Iglesias\"\r\n    }\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -450,14 +450,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/poi/6",
+							"raw": "localhost:8080/poi/9",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"poi",
-								"6"
+								"9"
 							]
 						}
 					},
@@ -494,7 +494,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"Ruta 1\",\r\n    \"poi\" : [\r\n        {\r\n        \"name\": \"Centro Cerámica Triana\",\r\n        \"location\": \"37.385656, -6.004614\",\r\n        \"description\": \"El Centro Cerámica Triana es un museo creado en el año 2014 por el Ayuntamiento de Sevilla, con la colaboración de la Junta de Andalucía, para conservar y promocionar la tradición cerámica de la ciudad.\",\r\n        \"date\": \"2018-02-27\",\r\n        \"coverPhoto\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Museo_de_la_Cer%C3%A1mica_de_Triana_2.jpg/420px-Museo_de_la_Cer%C3%A1mica_de_Triana_2.jpg\",\r\n        \"photo2\": null,\r\n        \"photo3\": null,\r\n        \"category\" : {\r\n            \"id\": 5,\r\n            \"name\": \"Museos\"\r\n          }\r\n       }\r\n    ]  \r\n}",
+							"raw": "{\r\n    \"name\" : \"Ruta 1\",\r\n    \"poi\" : [\r\n        {\r\n        \"name\": \"Centro Cerámica Triana\",\r\n        \"location\": \"37.385656, -6.004614\",\r\n        \"description\": \"El Centro Cerámica Triana es un museo creado en el año 2014 por el Ayuntamiento de Sevilla, con la colaboración de la Junta de Andalucía, para conservar y promocionar la tradición cerámica de la ciudad.\",\r\n        \"date\": \"2018-02-27\",\r\n        \"coverPhoto\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Museo_de_la_Cer%C3%A1mica_de_Triana_2.jpg/420px-Museo_de_la_Cer%C3%A1mica_de_Triana_2.jpg\",\r\n        \"photo2\": null,\r\n        \"photo3\": null,\r\n        \"category\" : {\r\n            \"id\": 8,\r\n            \"name\": \"Iglesias\"\r\n          }\r\n       }\r\n    ]  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -502,7 +502,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/route/6/poi/7",
+							"raw": "localhost:8080/route/6/poi/9",
 							"host": [
 								"localhost"
 							],
@@ -511,7 +511,7 @@
 								"route",
 								"6",
 								"poi",
-								"7"
+								"9"
 							]
 						}
 					},
@@ -618,7 +618,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"La mejor ruta\",\r\n    \"poi\" : [\r\n        \"Centro Cerámica Triana\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"name\" : \"La mejor ruta\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -645,7 +645,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/route/6/poi/7",
+							"raw": "localhost:8080/route/6/poi/9",
 							"host": [
 								"localhost"
 							],
@@ -654,7 +654,7 @@
 								"route",
 								"6",
 								"poi",
-								"7"
+								"9"
 							]
 						}
 					},
